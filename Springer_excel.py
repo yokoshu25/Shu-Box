@@ -54,7 +54,7 @@ int_lis = ['Big Data','Business Information Systems','Computer Applications',
            'Information Systems and Communication Service','Python', 
            'e-Business/e-Commerce','e-Commerce/e-business',]
 
-int_lis = ['IT in Business']
+#int_lis = ['IT in Business']
         
 l = pd.DataFrame()
 c = -1
@@ -65,3 +65,4 @@ for n in range(len(clas)):
         print(i)
         if i in clas[c]:
             l.append(c)
+
