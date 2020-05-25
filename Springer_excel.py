@@ -48,21 +48,23 @@ for s in genres:
 genre.sort()
 
 
-int_lis = ['Big Data','Business Information Systems','Computer Applications', 
-           'Computer Engineering','Data Structures','IT in Business', 
-           'Information Systems Applications (incl.Internet)', 
-           'Information Systems and Communication Service','Python', 
-           'e-Business/e-Commerce','e-Commerce/e-business',]
+# int_lis = ['Big Data','Business Information Systems','Computer Applications', 
+#            'Computer Engineering','Data Structures','IT in Business', 
+#            'Information Systems Applications (incl.Internet)', 
+#            'Information Systems and Communication Service','Python', 
+#            'e-Business/e-Commerce','e-Commerce/e-business',]
 
-#int_lis = ['IT in Business']
+int_lis = ['IT in Business','Business Information Systems' ]
+
+
+
+
         
 l = pd.DataFrame()
 c = -1
 for n in range(len(clas)):
     c += 1
-    print(c)
     for i in int_lis:
-        print(i)
         if i in clas[c]:
-            l.append(c)
+            l = l.append(df.iloc[c])
 
