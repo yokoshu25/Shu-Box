@@ -12,7 +12,7 @@ import re
 import time
 import os
 
-os.chdir('/Users/yokoishusei/Desktop/mypy/Springer')
+os.chdir('-pathname-')
 excel_path = 'Free+English+textbooks.xlsx'
 df = pd.read_excel(excel_path)
 
@@ -48,13 +48,14 @@ for s in genres:
 genre.sort()
 
 
-# int_lis = ['Big Data','Business Information Systems','Computer Applications', 
-#            'Computer Engineering','Data Structures','IT in Business', 
-#            'Information Systems Applications (incl.Internet)', 
-#            'Information Systems and Communication Service','Python', 
-#            'e-Business/e-Commerce','e-Commerce/e-business',]
+int_lis = ['Business Information Systems', 
+            'Data Structures','IT in Business', 
+            'Information Systems Applications (incl.Internet)', 
+            'Information Systems and Communication Service','Python', 
+            'e-Business/e-Commerce','e-Commerce/e-business' 'Statistics and Computing/Statistics Programs',
+            'Statistics for Business/Economics/Mathematical Finance/Insurance',]
 
-int_lis = ['IT in Business','Business Information Systems']
+#int_lis = ['IT in Business','Business Information Systems']
 
 
 
@@ -69,6 +70,7 @@ for n in range(len(clas)):
             New_df = New_df.append(df.iloc[c])
             
 New_df = New_df.drop_duplicates()
+New_df = New_df.reset_index(drop = True)
 
 
 ########## cited from https://takala.tokyo/takala_wp/2020/05/09/889/ credits on Takala ######## 
@@ -76,7 +78,7 @@ New_df = New_df.drop_duplicates()
 
 N = New_df.shape[0]
 
-for i in range(N):
+for i in range(26,36):
 
     time.sleep(10) # Manner
 
