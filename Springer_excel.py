@@ -54,17 +54,48 @@ genre.sort()
 #            'Information Systems and Communication Service','Python', 
 #            'e-Business/e-Commerce','e-Commerce/e-business',]
 
-int_lis = ['IT in Business','Business Information Systems' ]
+int_lis = ['IT in Business','Business Information Systems']
 
 
 
 
         
-l = pd.DataFrame()
+New_df = pd.DataFrame()
 c = -1
 for n in range(len(clas)):
     c += 1
     for i in int_lis:
         if i in clas[c]:
-            l = l.append(df.iloc[c])
+            New_df = New_df.append(df.iloc[c])
+            
+New_df = New_df.drop_duplicates()
+
+
+########## cited from https://takala.tokyo/takala_wp/2020/05/09/889/ credits on Takala ######## 
+
+
+N = New_df.shape[0]
+
+for i in range(N):
+
+    time.sleep(10) # Manner
+
+    download_URL = 'https://link.springer.com/content/pdf/' + New_df['DOI URL'][i].split('http://doi.org')[1] + '.pdf'
+    editoin = New_df['Edition'][i]
+
+    year = re.findall('\d{4}', editoin)[0]
+    title = New_df['Book Title'][i].replace(' ', '_')
+
+    file_name = 'pdf\\' + year + '_' + title + '.pdf'
+
+    urllib.request.urlretrieve(download_URL, file_name)
+
+
+
+
+
+
+
+
+
 
