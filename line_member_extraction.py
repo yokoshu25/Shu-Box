@@ -19,8 +19,8 @@ import time
 from tqdm import tqdm
 import random
 
-f = open('/Users/shuseiyokoi/Downloads/[LINE] Chat in 【ノート必見👀】SB22卒内定者の会.txt', 'r')
-#f = open('/Users/yokoishusei/Desktop/yasapy/ひま/[LINE]_Chat_copy.txt')
+f = open('/Downloads/[LINE] Chat in 【ノート必見👀】〇〇卒内定者の会.txt', 'r')
+#f = open('/yasapy/ひま/[LINE]_Chat_copy.txt')
 file = f.read()
 text = file.split('\n')
 f.close()
@@ -49,7 +49,7 @@ f.close()
 
 
 try:
-    with open('/Users/shuseiyokoi/Library/Mobile Documents/com~apple~CloudDocs/Desktop/mypy/ひま/SB_LINE_members.txt', mode='w') as f:
+    with open('/Users/Desktop/mypy/ひま/LINE_members.txt', mode='w') as f:
         f.write(str(members))
 except FileExistsError:
     pass
